@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Go-Kart Special</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="hudCanvas"></canvas>
+
+    <div id="menu" class="panel">
+      <div class="brand">
+        <div class="kicker">Go-Kart Special</div>
+        <h1>Race, boost, unlock, repeat.</h1>
+        <p>A fast starter build with career scaffolding, arcade boosts, offline AI, and mobile controls.</p>
+      </div>
+
+      <div class="grid">
+        <button class="modeCard selected" data-mode="normal">
+          <span class="label">Normal Mode</span>
+          <span class="desc">Pure go-karting, cleaner grip, no boosts.</span>
+        </button>
+        <button class="modeCard" data-mode="arcade">
+          <span class="label">Arcade Mode</span>
+          <span class="desc">Boost pads, coins, and a louder race feel.</span>
+        </button>
+        <button class="modeCard" data-mode="career">
+          <span class="label">Career Mode</span>
+          <span class="desc">Stub for rentals, upgrades, and progression.</span>
+        </button>
+        <button class="modeCard" data-mode="multiplayer">
+          <span class="label">Online Multiplayer</span>
+          <span class="desc">Lobby and rooms coming in the next build.</span>
+        </button>
+      </div>
+
+      <div class="row">
+        <div class="chip">Offline ready</div>
+        <div class="chip">Keyboard</div>
+        <div class="chip">Touch</div>
+        <div class="chip">Controller-friendly</div>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" class="primary">Start Race</button>
+        <button id="dailyBtn" class="secondary">Daily Reward</button>
+      </div>
+
+      <div id="rewardBox" class="rewardBox hidden"></div>
+      <div class="footerNote">Tip: press Boost only in Arcade mode. On mobile, use the buttons at the bottom right.</div>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="topbar">
+        <div>
+          <div id="modeLabel" class="tiny">NORMAL</div>
+          <div id="statusLabel" class="status">Lap 1/3</div>
+        </div>
+        <div class="stats">
+          <div><span>Speed</span><strong id="speedReadout">0</strong></div>
+          <div><span>Coins</span><strong id="coinReadout">0</strong></div>
+          <div><span>Rank</span><strong id="rankReadout">4</strong></div>
+        </div>
+      </div>
+
+      <div id="toast" class="toast hidden"></div>
+
+      <div id="endPanel" class="endPanel hidden">
+        <h2 id="endTitle">Race Complete</h2>
+        <p id="endText"></p>
+        <div class="actions">
+          <button id="replayBtn" class="primary">Replay Last Lap</button>
+          <button id="restartBtn" class="secondary">Race Again</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="touchControls" class="touchControls">
+      <button class="touchBtn" data-touch="left">⟵</button>
+      <button class="touchBtn" data-touch="right">⟶</button>
+      <button class="touchBtn" data-touch="brake">Brake</button>
+      <button class="touchBtn accent" data-touch="boost">Boost</button>
+      <button class="touchBtn" data-touch="throttle">Gas</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
